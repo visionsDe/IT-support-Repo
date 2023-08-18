@@ -1,4 +1,2 @@
 hii
-Test=commit3
-Test1
 yes
