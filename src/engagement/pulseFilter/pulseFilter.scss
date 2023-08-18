@@ -1,0 +1,181 @@
+.sortFilterDropdown{
+    box-shadow: 3px 3px 10px #00000029;
+    border: 1px solid #707070;
+    border-radius: 8px;
+    min-width: 280px;
+    margin-top:14px;
+    padding: 18px;
+    background-color: #fff;
+    @media (max-width: 1200px) {
+        min-width: 250px;
+    }
+    .closeBtn{
+        &:hover{
+            color: #000;
+        }
+    }
+    .sortRadios{
+        .MuiFormControlLabel-root{
+            margin-top: 5px ;
+            margin-bottom: 5px ;
+            .MuiButtonBase-root{
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-right: 5px;
+            }
+            .MuiTypography-root{
+                font-size: 15px;
+                line-height: 1;
+            }
+        }
+    }
+}
+.sortBtn{
+    border: 1px solid #707070;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    color: #000;
+    svg{
+        margin-left: 4px;
+        margin-top: 1px;
+    }
+    &:hover{
+        background-color: #f5f5f5;
+    }
+
+}
+.filter {
+    &_body {
+        .MuiFormControl-root {
+            margin: 0;
+            .MuiInputBase-root {
+                height: 40px;
+                border-radius: 50px;
+                min-width: 150px;
+                @media (max-width: 1399px) {
+                    min-width: auto;
+                }
+                .MuiSelect-select {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    font-size: 12px;
+                }
+                &.customFilterSelect{
+                    .MuiSelect-select {
+                        font-size: 14px;
+                        background-image:url('../../commonAssets/images/customSelectArrow.svg');
+                        background-repeat: no-repeat;
+                        background-size: 12px;
+                        background-position-y: center;
+                        background-position-x: calc(100% - 15px);
+
+                    }
+                    svg.MuiSvgIcon-root{
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+    &_footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.filter_body{
+    margin-bottom: 10px;
+    .cMultiSelect {
+        &__control {
+          min-height: 40px;
+          border: 1px solid #707070;
+          border-radius: 30px;
+          margin-bottom:5px;
+    
+          &--menu-is-open {
+            outline-color: #225FA0;
+            box-shadow: 0 0 0 1px #225FA0;
+            .cMultiSelect__indicator{
+                transform: rotate(180deg);
+            }
+          }
+        }
+    
+        &__value-container {
+          padding: 0 13px;
+          .cMultiSelect__placeholder{
+            color: #000;
+          }
+        }
+    
+        &__indicator-separator {
+          display: none;
+        }
+    
+        &__clear-indicator {
+          display: none;
+        }
+    
+        &__indicator {
+          color: #222;
+    
+          svg {
+            width: 25px;
+          }
+        }
+    
+        &__multi-value {
+          background-color: #E6EDF5;
+          margin: 4px 4px;
+    
+          &__remove {
+            cursor: pointer;
+          }
+    
+          &__label {
+            font-size: 16px;
+          }
+        }
+      }
+}
+
+
+.multiCheckboxList{
+    max-height: 250px;
+    max-width: 310px;
+    overflow-y: scroll !important;
+    overflow: hidden;
+    flex-flow: column !important;
+    @media (max-width: 1600px) {
+        max-height: 215px;
+    }
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+     
+    &::-webkit-scrollbar-track {
+        border-radius: 8px;
+        border:1px solid #707070;
+    }
+     
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #707070;
+    }
+    .MuiFormControlLabel-root{
+        .MuiCheckbox-root {
+            padding: 6px 9px !important;
+        }
+        .MuiFormControlLabel-label{
+            font-size: 15px!important;
+        }
+    }
+
+}

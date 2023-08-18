@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  /* outline: 1px dashed #f00; */
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+body {
+  margin: 0px;
+  border-radius: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eeeeee;
+}

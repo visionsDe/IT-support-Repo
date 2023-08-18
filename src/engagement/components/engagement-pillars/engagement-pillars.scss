@@ -1,0 +1,392 @@
+.engagement_pillars {
+  &-wrapper {
+    width: 100%;
+    .engagementPillar {
+      &-sliderWrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-gap: 32px;
+        max-width: 100%;
+        position: relative;
+
+        @media (max-width: 1599px) {
+          grid-gap: 30px 22px;
+        }
+
+        @media (max-width: 1499px) {
+          grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media (max-width: 768px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 575px) {
+          grid-gap: 30px 12px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .MuiBox-root {
+          &.engagementPillar {
+            &-sliderBox {
+              .MuiSlider {
+                &-root {
+                  position: relative;
+                  box-shadow: none;
+                  border-radius: 7px;
+                  &.Mui-disabled{
+                    color: #225fa000;
+                  }
+                }
+                // &-markActive{
+                //   z-index: 5;
+                // }
+                &-thumb {
+                  // height: calc(10% + 1px);
+                  height: 30px;
+                  border-radius: 0;
+                  width: 100%;
+                  color: #fc941b;
+                  // transform: translate(-50%, 0) scale(1);
+                  transform: translate(-50%, calc(50% - 15px));
+                  border-top: 1px solid #fff;
+                  border-bottom: 1px solid #fff;
+                  &::after {
+                    width: 15px;
+                    height: 100%;
+                    border-radius: 0;
+                    clip-path: polygon(
+                      0% 0%,
+                      30% 0%,
+                      100% 50%,
+                      30% 100%,
+                      0% 100%
+                    );
+                  }
+                  &::before {
+                    box-shadow: none;
+                  }
+                  .MuiSlider-valueLabel {
+                    color: #000;
+                    font-size: 20px;
+                    background-color: unset;
+                    top: calc(50% + 2px);
+                    left: 50%;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    line-height: 1;
+                    font-weight: 600;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(
+                      -50%,
+                      -50%
+                    ); /* Safari & Chrome */
+                    -moz-transform: translate(-50%, -50%); /* Firefox */
+                    -ms-transform: translate(
+                      -50%,
+                      -50%
+                    ); /* Internet Explorer */
+                    -o-transform: translate(-50%, -50%); /* Opera */
+                  }
+                }
+
+                &-mark {
+                  opacity: 0.5 !important;
+                  background: #fff;
+                  width: 100%;
+                  height: 1px;
+                  transform: translate(-50%, 0px);
+                  &[data-index="0"] {
+                    display: none;
+                  }
+                  &[data-index="10"] {
+                    display: none;
+                  }
+                }
+              }
+              .targetRange {
+                // position: absolute;
+                // top:0;
+                pointer-events: none;
+                .MuiSlider-rail {
+                  margin-top: -30px;
+                  background: #225fa0;
+                  opacity: 1;
+                }
+                .MuiSlider-thumb {
+                  color: #fc941b;
+                  background: #fc941b;
+                  
+                  pointer-events: all;
+                  &[style="bottom: 0%;"] {
+                    border-radius: 0 0 6px 0;
+                  }
+                  &[style="bottom: 100%;"] {
+                    border-radius: 0 6px 0 0;
+                  }
+                  &::after {
+                    background: #fc941b;
+                    transform: scale(-1);
+                    -webkit-transform: scale(-1); /* Safari & Chrome */
+                    -moz-transform: scale(-1); /* Firefox */
+                    -ms-transform: scale(-1); /* Internet Explorer */
+                    -o-transform: scale(-1); /* Opera */
+                    transform-origin: center center;
+                    top: 0;
+                    left: -14px;
+                  }
+                  .MuiSlider-valueLabel {
+                    &::before {
+                      content: "Target";
+                      font-size: 11px;
+                      font-weight: 400;
+                      position: absolute;
+                      top: calc(50% - 1px);
+
+                      transform: translate(-50%, 50%) rotate(270deg);
+                      -webkit-transform: translate(-50%, 50%) rotate(270deg); /* Safari & Chrome */
+                      -moz-transform: translate(-50%, 50%) rotate(270deg); /* Firefox */
+                      -ms-transform: translate(-50%, 50%) rotate(270deg); /* Internet Explorer */
+                      -o-transform: translate(-50%, 50%) rotate(270deg); /* Opera */
+                      left: -25px;
+                      height: auto;
+                      font-variant: normal;
+                    }
+                  }
+                }
+              }
+              .currentRange {
+                background: transparent;
+                margin-left: -40px;
+                pointer-events: none;
+                .MuiSlider-rail {
+                  display: none;
+                }
+                .MuiSlider-track {
+                  display: none;
+                }
+                .MuiSlider-mark {
+                  display: none;
+                }
+                .MuiSlider-thumb {
+                  color: #22a6de;
+                  background: #22a6de;
+                  pointer-events: all;
+                  z-index: 55;
+                  &[style="bottom: 0%;"] {
+                    border-radius: 0 0 0 6px;
+                  }
+                  &[style="bottom: 100%;"] {
+                    border-radius: 6px 0 0 0;
+                  }
+
+                  &::after {
+                    background: #22a6de;
+                    left: calc(100% + 7px);
+                  }
+                  .MuiSlider-valueLabel {
+                    &::before {
+                      content: "Current";
+                      font-size: 11px;
+                      font-weight: 400;
+                      position: absolute;
+                      top: calc(50% - 3px);
+                      transform: translate(-50%, -50%) rotate(90deg);
+                      -webkit-transform: translate(-50%, -50%) rotate(90deg); /* Safari & Chrome */
+                      -moz-transform: translate(-50%, -50%) rotate(90deg); /* Firefox */
+                      -ms-transform: translate(-50%, -50%) rotate(90deg); /* Internet Explorer */
+                      -o-transform: translate(-50%, -50%) rotate(90deg); /* Opera */
+                      left: calc(100% + 25px);
+                      width: 65px;
+                      font-variant: normal;
+                    }
+                  }
+                }
+              }
+              .equalPillarSliders {
+                .targetRange {
+                  .MuiSlider-thumb {
+                    border-radius: 0;
+                  }
+                }
+                .currentRange {
+                  .MuiSlider-thumb {
+                    background: #fc941b;
+                    border-radius: 0;
+                    &::after {
+                      background: #fc941b;
+                    }
+                  }
+                }
+              }
+
+              .MuiCardContent {
+                &-root {
+                  .MuiTypography-root {
+                    font-weight: 500;
+                  }
+                }
+              }
+
+              .MuiCardActions {
+                &-root {
+                  justify-content: center;
+                  -ms-flex-pack: center;
+                  border-top: 1px solid #70707033;
+
+                  .MuiTypography-root {
+                    margin-left: 6px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: #000;
+                  }
+
+                  .commentButton {
+                    svg {
+                      height: 22px;
+                      width: auto;
+                      margin-right: 7px;
+
+                      path {
+                        fill: #fc941b;
+                      }
+                    }
+                  }
+
+                  &.disabled {
+                    & > * {
+                      opacity: 0.4;
+                    }
+                  }
+                }
+              }
+
+              .MuiTypography-h6 {
+                .MuiSvgIcon-root {
+                  cursor: pointer;
+                }
+
+                .MuiTooltip-popper {
+                  .MuiTooltip-tooltip {
+                    margin-bottom: 15px;
+                    box-shadow: 0px 2px 12px #00000065;
+                    border-radius: 10px;
+                    min-width: 250px;
+                    .MuiCardContent-root {
+                      padding: 20px 30px;
+
+                      @media (max-width: 991px) {
+                        padding: 20px 20px;
+                      }
+                      @media (max-width: 768px) {
+                        padding: 20px 15px;
+                      }
+                    }
+
+                    .MuiTypography-h6 {
+                      font-weight: bold;
+                      line-height: 1.4;
+                    }
+
+                    .MuiIconButton-root {
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      transition: all ease-in-out 0.3s;
+                      width: 30px;
+                      height: 30px;
+                      &:hover {
+                        transform: rotate(90deg);
+                      }
+                      svg{
+                        width: 10px;
+                      }
+                    }
+                    p {
+                      font-size: 14px;
+                      text-align: left;
+                    }
+                  }
+                  .MuiTooltip-arrow {
+                    bottom: auto;
+                    top: 100%;
+                    width: 40px;
+                    height: 17px;
+                    color: #fff;
+                    filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.2));
+                    &::before {
+                      transform: none;
+                      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+                    }
+                    &::after {
+                      content: "";
+                      width: 50px;
+                      height: 50px;
+                      // background: #000;
+                      display: block;
+                      position: absolute;
+                      top: 0px;
+                    }
+                  }
+                }
+                .MuiTooltip-popper[data-popper-placement*="bottom"] {
+                  .MuiTooltip-tooltip {
+                    margin-top: 22px;
+                  }
+                  .MuiTooltip-arrow {
+                    bottom: 100%;
+                    top: auto;
+                    filter: drop-shadow(0px -2px 3px rgba(0, 0, 0, 0.2));
+                    &::before {
+                      transform: rotate(180deg);
+                      -webkit-transform: rotate(180deg); /* Safari & Chrome */
+                      -moz-transform: rotate(180deg); /* Firefox */
+                      -ms-transform: rotate(180deg); /* Internet Explorer */
+                      -o-transform: rotate(180deg); /* Opera */
+                      transform-origin: center;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-btnWrap {
+    margin-top: 40px;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    -ms-flex-align: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      -ms-flex-direction: column;
+    }
+
+    .MuiButton-root {
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+
+      &:not(:last-child) {
+        margin-right: 15px;
+
+        @media (max-width: 767px) {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+.pillarTextName{
+  text-align: center;
+}

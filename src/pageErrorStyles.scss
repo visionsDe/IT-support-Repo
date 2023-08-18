@@ -1,0 +1,89 @@
+$wh: #ffffff;
+$dark: #383a41;
+$red: #eb6d6d;
+$blue: #5e7fdc;
+$break: 400px;
+
+.errorPageWrapper {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 100vh;
+    padding: 25px;
+    background: transparent linear-gradient(180deg, #22a6de 0%, #2283bf 32%, #225fa0 100%) 0% 0% no-repeat padding-box;
+}
+
+
+.errorPageWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    color: $wh;
+    .container{
+        max-width: 1000px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        background: rgb(255 255 255 / 25%);
+        padding: 70px 50px;
+        border-radius: 20px;
+        @media screen and (max-width: 1400px) {
+            max-width: 920px;
+            padding: 50px 40px;
+        }
+        @media screen and (max-width: 991px) {
+            max-width: 740px;
+            padding: 40px 30px;
+        }
+        .errorImage{
+            width: 50%;
+            padding:0 20px;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                margin-bottom: 30px;
+                text-align: center;
+                padding:0px;
+            }
+            img{
+                max-width: 100%;
+                width: 100%;
+                @media screen and (max-width: 768px) {
+                    max-width: 450px;
+                }
+            }
+        }
+        .errorText{
+            text-align: left;
+            width: 50%;
+            padding:0 20px;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                text-align: center;
+                padding:0px;
+            }
+            h1 {
+                font-weight: 600;
+                font-size: 65px;
+                text-transform: uppercase;
+                margin: 0;
+                @media screen and (max-width: 1400px) {
+                    font-size: 50px;
+                }
+                @media screen and (max-width: 768px) {
+                    font-size: 40px;
+                }
+            }
+            p{
+                font-size: 20px;
+                line-height: 1.5;
+                @media screen and (max-width: 1400px) {
+                    font-size: 18px;
+                }
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

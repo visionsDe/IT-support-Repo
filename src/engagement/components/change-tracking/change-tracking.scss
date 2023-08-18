@@ -1,0 +1,210 @@
+.change_tracking {
+  &-wrapper {
+    &.MuiPaper-root {
+      max-width: 715px;
+      // box-shadow: 0px 2px 6px rgb(0 0 0 / 16%);
+      box-shadow: none;
+      border-radius: 8px;
+      border: 1px solid #22A6DE;
+      .MuiCardHeader {
+        &-root {
+          text-align: center;
+          border-bottom: 1px solid #e2e2e2;
+          padding: 18px 15px;
+          .MuiTypography-root {
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+      }
+      .MuiCardContent-root {
+        max-height: 330px;
+        overflow: auto;
+        padding-top: 0;
+        min-height: 300px;
+        padding-bottom:0px;
+        @media (max-width: 768px) {
+          padding: 0px 5px 15px;
+        }
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #fff;
+          padding: 0 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #e0e0e0;
+          border-radius: 30px;
+          opacity: 1;
+        }
+        &:-webkit-scrollbar-thumb:hover {
+          background: #9f9d9d;
+        }
+        .MuiList-root {
+          .MuiListItem-root {
+            .change_tracking {
+              &-details {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                width: 100%;
+                border-radius: 4px;
+                padding: 12px 15px;
+                background-color: #e6edf5;
+                border: 1px solid;
+                border-color: #e6edf5;
+                @media (max-width: 575px) {
+                  flex-direction: column; 
+                }
+                &.low-score {
+                  border-color: #ff0000;
+                }
+                .MuiBox-root {
+                  display: flex;
+                  align-items: center;
+                  @media (max-width: 767px) {
+                    width: 100%;
+                  }
+                  &.details {
+                    &-left {
+                      position: relative;
+                      padding-left: 20px;
+                      @media (max-width: 767px) {
+                        padding-left: 15px;
+                      }
+                      .svg-inline--fa {
+                        color: #ff3e3e;
+                        position: absolute;
+                        left: 0;
+                        font-size: 30px;
+                      }
+                      .MuiButtonBase-root {
+                        margin-left: 6px;
+                        border-radius: 50px;
+                        padding: 5px 15px;
+                        text-transform: capitalize;
+                        text-decoration: underline;
+                        font-style: italic;
+                        white-space: nowrap;
+                      }
+                    }
+                    &-right {
+                      @media (max-width: 767px) {
+                        justify-content: flex-start;
+                        margin-top: 7px;
+                        padding-left: 15px;
+                      }
+                      .MuiTypography-root {
+                        color: #000;
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-right: 8px;
+                        @media (max-width: 1400px) {
+                          font-size: 16px;
+                        }
+                      }
+                      .MuiChip-root {
+                        width: 37px;
+                        height: 37px;
+                        border-radius: 50px;
+                        @media (max-width: 1400px) {
+                          width: 30px;
+                          height: 30px;
+                        }
+                        .MuiChip-label {
+                          font-size: 18px;
+                          font-weight: bold;
+                          padding: 0;
+                          @media (max-width: 1400px) {
+                            font-size: 16px;
+                          }
+                        }
+                        &.green {
+                          background-color: #46a800;
+                        }
+                        &.red {
+                          background-color: #ff3e3e;
+                        }
+                        &.black {
+                          background-color: #000000;
+                        }
+                      }
+                    }
+                  }
+                }
+                .MuiTypography {
+                  &-h6 {
+                    font-size: 18px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    margin-right: 10px;
+                    @media (max-width: 1400px) {
+                      font-size: 16px;
+                      margin-right: 7px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*************/
+.notEnoughDataWrap{
+  padding: 0px !important;
+  height: calc(100% - 50px);
+  overflow: hidden !important;
+  @media (max-width: 1260px) {
+    height: auto;
+  }
+  .MuiList-root{
+    padding: 0;
+  }
+}
+.notEnoughData{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F5F5F5;
+  font-size: 22px;
+  color: #898989;
+  @media (max-width: 1200px) {
+    height: auto;
+    min-height: 400px;
+  }
+}
+.notEnoughData.new2 {
+  max-height: 300px;
+  @media (max-width: 1200px) {
+    min-height: 300px;
+  }
+
+}
+
+.notification_comment{
+  font-size: 15px!important;
+  font-style: italic !important;
+  margin-right:10px !important;
+  @media (max-width: 1400px) {
+    font-size: 13px!important;
+    margin-right:7px!important;
+  }
+}
+.load_more {
+  background-color: transparent !important;
+  padding: 12px 0px !important;
+  border: none !important;
+  .details-left{
+    width: 100% !important;
+    display: block !important;
+    padding: 0px !important;
+  }
+}
+

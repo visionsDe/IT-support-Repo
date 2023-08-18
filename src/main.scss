@@ -1,0 +1,941 @@
+/********************Global Font css start**********************/
+@font-face {
+  font-family: "Helvetica";
+  src: url("commonAssets/fonts/Helvetica/Helvetica-BoldOblique.eot");
+  src: url("commonAssets/fonts/Helvetica/Helvetica-BoldOblique.eot?#iefix") format("embedded-opentype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-BoldOblique.woff2") format("woff2"),
+    url("commonAssets/fonts/Helvetica/Helvetica-BoldOblique.woff") format("woff"),
+    url("commonAssets/fonts/Helvetica/Helvetica-BoldOblique.ttf") format("truetype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-BoldOblique.svg#Helvetica-BoldOblique") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("commonAssets/fonts/Helvetica/Helvetica-Bold.eot");
+  src: url("commonAssets/fonts/Helvetica/Helvetica-Bold.eot?#iefix") format("embedded-opentype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Bold.woff2") format("woff2"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Bold.woff") format("woff"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Bold.ttf") format("truetype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Bold.svg#Helvetica-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("commonAssets/fonts/Helvetica/Helvetica.eot");
+  src: url("commonAssets/fonts/Helvetica/Helvetica.eot?#iefix") format("embedded-opentype"),
+    url("commonAssets/fonts/Helvetica/Helvetica.woff2") format("woff2"),
+    url("commonAssets/fonts/Helvetica/Helvetica.woff") format("woff"),
+    url("commonAssets/fonts/Helvetica/Helvetica.ttf") format("truetype"),
+    url("commonAssets/fonts/Helvetica/Helvetica.svg#Helvetica") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("commonAssets/fonts/Helvetica/Helvetica-Light.eot");
+  src: url("commonAssets/fonts/Helvetica/Helvetica-Light.eot?#iefix") format("embedded-opentype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Light.woff2") format("woff2"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Light.woff") format("woff"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Light.ttf") format("truetype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Light.svg#Helvetica-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("commonAssets/fonts/Helvetica/Helvetica-Oblique.eot");
+  src: url("commonAssets/fonts/Helvetica/Helvetica-Oblique.eot?#iefix") format("embedded-opentype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Oblique.woff2") format("woff2"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Oblique.woff") format("woff"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Oblique.ttf") format("truetype"),
+    url("commonAssets/fonts/Helvetica/Helvetica-Oblique.svg#Helvetica-Oblique") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('commonAssets/fonts/Source/SourceSansPro-Regular.eot');
+  src: url('commonAssets/fonts/Source/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('commonAssets/fonts/Source/SourceSansPro-Regular.woff2') format('woff2'),
+    url('commonAssets/fonts/Source/SourceSansPro-Regular.woff') format('woff'),
+    url('commonAssets/fonts/Source/SourceSansPro-Regular.ttf') format('truetype'),
+    url('commonAssets/fonts/Source/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('commonAssets/fonts/Source/SourceSansPro-SemiBold.eot');
+  src: url('commonAssets/fonts/Source/SourceSansPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('commonAssets/fonts/Source/SourceSansPro-SemiBold.woff2') format('woff2'),
+    url('commonAssets/fonts/Source/SourceSansPro-SemiBold.woff') format('woff'),
+    url('commonAssets/fonts/Source/SourceSansPro-SemiBold.ttf') format('truetype'),
+    url('commonAssets/fonts/Source/SourceSansPro-SemiBold.svg#SourceSansPro-SemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/********************Global Font css End**********************/
+
+
+
+/********************Universal css start**********************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica";
+}
+
+img {
+  max-width: 100%;
+}
+
+.rootWrapper {
+  padding: 0px 20px 15px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0px 15px 15px;
+  }
+
+  @media screen and (max-width: 991px) {
+    padding: 0px 10px 10px;
+  }
+
+  .rootContainer {
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 10px 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 6px #0000001A;
+    max-width: 100%;
+
+    @media screen and (max-width: 1600px) {
+      padding: 30px;
+    }
+
+    @media screen and (max-width: 1400px) {
+      padding: 30px 25px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 20px;
+    }
+  }
+
+  .rootManager {
+    padding: 20px 0px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.breadcrumb-wrap {
+  background-color: #225FA0;
+  color: #fff;
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  border-radius: 10px 10px 0px 0px;
+
+  @media screen and (max-width: 1600px) {
+    padding: 15px 30px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    padding: 15px 25px;
+  }
+
+  @media screen and (max-width: 991px) {
+    align-items: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 15px 20px;
+  }
+
+  .breadcrumb-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 30px;
+    line-height: 1.3;
+    position: relative;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    svg {
+      margin-right: 5px;
+      height: 20px;
+      vertical-align: bottom;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .right-menu {
+    flex: 1;
+    padding-left: 15px;
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      justify-content: flex-end;
+      padding: 4px 0px;
+
+      li {
+        margin-left: 50px;
+        padding: 10px 0px;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 3px;
+          background: #fff;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          opacity: 0;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:hover {
+          &::before {
+            opacity: 0.5;
+          }
+
+        }
+
+        @media screen and (max-width: 1400px) {
+          font-size: 15px;
+          margin-left: 30px;
+        }
+
+        @media screen and (max-width: 991px) {
+          font-size: 14px;
+          margin-left: 20px;
+        }
+      }
+
+      li.activeMenu {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+}
+
+/********************Universal css End**********************/
+
+.MuiButton-root {
+
+  &.btn-primary {
+    // background-color: #225FA0;
+    color: #fff;
+    min-width: 174px;
+    min-height: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 25px;
+    border: none;
+    font-size: 14px;
+    border-radius: 30px;
+    text-transform: capitalize;
+    // box-shadow: none;
+  }
+
+  &.btn-text {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: underline;
+    text-transform: capitalize;
+    min-height: 45px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+
+    &:hover {
+      color: #225fa0;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    &.decorationNone {
+      text-decoration: none;
+    }
+  }
+
+  &.btn-border {
+    color: #000000;
+    background-color: transparent;
+    text-transform: capitalize;
+    height: 45px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 1px solid #707070;
+    box-shadow: none;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid #707070;
+      box-shadow: none;
+    }
+  }
+
+  &.btn-white {
+    text-transform: capitalize;
+    height: 45px;
+    font-weight: bold;
+    padding: 10px 35px;
+    border-radius: 30px;
+  }
+
+  &.btn-full {
+    width: 100%;
+  }
+
+  &.btn-xxl {
+    height: 60px;
+    font-size: 20px;
+  }
+
+  &.btn-xl {
+    height: 50px;
+    font-size: 18px;
+  }
+
+  &.btn-md {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  &.minWidthAuto {
+    min-width: auto;
+  }
+}
+
+/********************Global Button css End**********************/
+
+/********************Global Input css start**********************/
+.MuiFormControl-root {
+  .MuiInputBase-root {
+    margin-top: 1px;
+
+    input {
+      padding: 13.5px 15px;
+    }
+  }
+}
+
+.font14 {
+  font-size: 14px;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.MuiTypography-root {
+  &.font18 {
+    font-size: 18px;
+  }
+
+  &.font14 {
+    font-size: 14px;
+  }
+}
+
+
+
+/*********************************/
+
+.topRow {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-gap: 35px;
+
+  @media(max-width: 1499px) {
+    grid-gap: 25px;
+  }
+
+  @media(max-width: 1199px) {
+    grid-template-columns: 230px 1fr;
+  }
+
+  @media(max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+
+  .employee_card-wrapper {
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  .topLeft {
+    margin-top: -70px;
+
+    @media (max-width:1400px) {
+      margin-top: -60px;
+    }
+
+    @media (max-width:991px) {
+      margin-top: 0px;
+    }
+  }
+
+  .topRight {
+    display: grid;
+    grid-gap: 25px;
+
+    .topRight-inner {
+      display: flex;
+      // align-items: flex-start;
+      grid-gap: 30px;
+
+      @media(max-width: 1499px) {
+        grid-gap: 25px;
+      }
+
+      @media(max-width: 1200px) {
+        flex-wrap: wrap;
+        display: grid;
+      }
+
+      .pulse_rating-wrapper {
+        max-width: 50%;
+        flex: 1 1 100%;
+
+        @media(max-width: 1200px) {
+          max-width: 100%;
+        }
+      }
+
+      .pulse_chart-wrapper {
+        max-width: 50%;
+        flex: 1 1 100%;
+
+        @media(max-width: 1200px) {
+          max-width: 100%;
+        }
+      }
+
+      .change_tracking-wrapper {
+        max-width: 50%;
+        flex: 1 1 100%;
+
+        @media(max-width: 1200px) {
+          max-width: 100%;
+        }
+      }
+
+      .engagement_pillars-wrapper {
+        margin-top: 10px;
+
+        @media (max-width: 1199px) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+}
+
+.bottomRow {
+  @media (max-width: 991px) {
+    margin-top: 30px;
+  }
+
+  .engagement_pillars {
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      grid-gap: 35px;
+      align-items: flex-start;
+      padding-top: 30px;
+
+      @media(max-width: 1199px) {
+        grid-template-columns: 1fr;
+      }
+
+      @media(max-width: 991px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-targetBox {
+      grid-row: span 2;
+
+      @media(max-width: 1199px) {
+        grid-row: auto;
+      }
+
+      @media(max-width: 991px) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+/********************Global Input css End**********************/
+
+
+/********************Global Button css start**********************/
+
+.login-popup .loginPopupTitle {
+  margin: 20px 0px;
+}
+
+.login-popup .MuiCardActions-root .MuiBox-root .btn-primary {
+  font-size: 19PX;
+  border-radius: 50PX;
+}
+
+.MuiBox-root:focus-visible {
+  outline: none;
+}
+
+
+.toolTipIcon {
+  position: relative;
+}
+
+.toolTipIcon:before {
+  content: "";
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+
+
+
+/***************************/
+
+
+.colorPrimary {
+  color: #225FA0 !important;
+}
+.disabled_color {
+  background-color: #225FA0 !important;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+span.customLabel {
+  color: #707070;
+}
+
+.cInputWrap {
+  margin-bottom: 22px;
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  .d-textArea {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    padding: 12.5px 15px;
+    width: 100%;
+    font-size: 16px;
+
+    &::Placeholder {
+      letter-spacing: 0;
+      font-family: "Helvetica";
+      color: #B2B2B2;
+    }
+
+    &:focus {
+      outline-color: #225FA0;
+    }
+  }
+
+  .d-textField {
+    width: 100%;
+
+    .MuiInputBase {
+      &-root {
+        border: 1px solid #707070;
+        border-radius: 10px;
+
+        &.Mui-focused {
+          border: 1px solid #225FA0;
+          outline: 1px solid #225FA0;
+        }
+
+        fieldset {
+          border: none;
+        }
+      }
+
+
+    }
+  }
+
+  .cMultiSelect {
+    &__control {
+      min-height: 50px;
+      border: 1px solid #707070;
+      border-radius: 10px;
+
+      &--is-focused {
+        outline-color: #225FA0;
+        box-shadow: 0 0 0 1px #225FA0;
+      }
+    }
+
+    &__value-container {
+      padding: 0 13px;
+    }
+
+    &__indicator-separator {
+      display: none;
+    }
+
+    &__clear-indicator {
+      display: none;
+    }
+
+    &__indicator {
+      color: #222;
+
+      svg {
+        width: 25px;
+      }
+    }
+
+    &__multi-value {
+      background-color: #E6EDF5;
+      margin: 4px 4px;
+
+      &__remove {
+        cursor: pointer;
+      }
+
+      &__label {
+        font-size: 16px;
+      }
+    }
+    &__menu{
+      &::-webkit-scrollbar {
+          width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+          border-radius: 8px;
+          border: 1px solid #707070;
+      }
+
+      &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: #707070;
+      }
+      font-size: 14px;
+      
+    }
+  }
+
+  .cDatePicker {
+    width: 100%;
+
+    .MuiInputLabel {
+      &-root {
+        font-size: 16px;
+        color: #B2B2B2;
+        margin-top: 2px;
+      }
+
+      &-shrink {
+        display: none;
+      }
+    }
+
+    .MuiInputBase-root {
+      border: 1px solid #707070;
+      border-radius: 10px;
+      background-image: url("commonAssets/images/calendar-icon.svg");
+      background-repeat: no-repeat;
+      background-size: 17px;
+      background-position-y: center;
+      background-position-x: calc(100% - 15px);
+      opacity: .7;
+
+      &.Mui-focused {
+        border: 1px solid #225FA0;
+        outline: 1px solid #225FA0;
+
+      }
+
+      fieldset {
+        display: none;
+      }
+    }
+
+    .MuiIconButton {
+      &-root {
+
+        opacity: 0;
+
+        svg {
+          opacity: 0;
+        }
+      }
+    }
+
+  }
+
+  .customAutoComplete {
+    width: 100%;
+
+    .MuiInputLabel {
+      &-root {
+        font-size: 16px;
+        color: #B2B2B2;
+        margin-top: 2px;
+      }
+
+      &-shrink {
+        display: none;
+      }
+    }
+
+    .MuiInputBase-root {
+      border: 1px solid #707070;
+      border-radius: 10px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+
+      &.Mui-focused {
+        border: 1px solid #225FA0;
+        outline: 1px solid #225FA0;
+
+      }
+
+      fieldset {
+        display: none;
+      }
+
+      .MuiChip {
+        &-root {
+          background-color: #E6EDF5;
+          margin: 4px 4px;
+          border-radius: 0;
+          font-size: 16px;
+          color: #000;
+
+        }
+
+        &-label {
+          margin-top: 5px;
+        }
+
+        &-deleteIcon {
+          cursor: pointer;
+          font-size: 14px;
+          color: #000;
+          margin-right: 10px;
+        }
+      }
+    }
+
+  }
+}
+
+.MuiInputBase-root {
+  &.customSelect {
+    border-radius: 10px;
+
+    .MuiSelect {
+      &-select {
+        padding: 10px 15px;
+        border: 1px solid #707070;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #fff;
+
+        &::after {
+          content: "";
+          width: 15px;
+          height: 15px;
+          background-image: url("commonAssets/images/customSelectIcon.svg");
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-position: center center;
+          background-size: 15px;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &-icon {
+        display: none;
+      }
+    }
+
+    &.height50 {
+      .MuiSelect {
+        &-select {
+          padding: 12.5px 15px;
+        }
+      }
+    }
+
+    &.rounded {
+      border-radius: 30px;
+
+      .MuiSelect {
+        &-select {
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}
+
+.MuiTypography-root {
+  &.tabMainTitle {
+    color: #225FA0;
+    font-size: 26px;
+    font-weight: 600;
+  }
+}
+
+.labelCamelCase label {
+  text-transform: capitalize;
+}
+
+.customPopper {
+  &.opened {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      transform-origin: center;
+      pointer-events: none;
+      border: solid #707070;
+      border-width: 1px 0px 0px 1px;
+      z-index: 2;
+    }
+  }
+}
+
+p.error-message {
+  font-size: 12px;
+  color: #f00;
+  margin: 0;
+}
+
+/***********************/
+
+
+.cMultiSelect__menu{
+  
+  &>div{
+    text-align:left !important;
+    font-size:15px;
+    padding-top:0px !important;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      border: 1px solid #707070;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #707070;
+    }
+  }
+}
+  
+.admin_filtersWrap .cMultiSelect__menu>div ul{
+  margin-top:0px !important;
+}
+// .admin_filtersWrap .cMultiSelect__menu>div {
+
+// border:1px solid #bcbcbc;
+// }
+
+.paletteColor1{
+  background-color: #CBE8D9 !important;
+  color:#707070 !important;
+}
+.paletteColor2{
+  background-color: #F0D1D1 !important;
+  color:#707070 !important;
+}
+.paletteColor3{
+  background-color: #FCE8BE !important;
+  color:#707070 !important;
+}
+.paletteColor4{
+  background-color: #CFE9FC !important;
+  color:#707070 !important;
+}

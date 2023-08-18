@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/manifest
+# testing
+/coverage
+
+# production
+/build
+/manifest
+# misc
+.DS_Store
+.env
+.env.*
+.env*
+.env.development
+.env.production
+.env.staging
+.deployment
+/build
+# package-lock.json
+
