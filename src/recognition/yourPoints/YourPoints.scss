@@ -1,0 +1,33 @@
+.YourPointsWrap{
+    background: #C74F11;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media(max-width: 1200px) {
+        margin-top: 0px;
+    }
+    .pointScore {
+        color: #FFE9A2;
+        font-size: 55px;
+        line-height: 1;
+        margin: 0;
+        padding-bottom: 5px;
+        font-weight: 600;
+        @media(max-width: 1400px) {
+            font-size: 50px;
+        }
+    }
+    .btn-text.redeem-button{
+        padding: 0;
+        min-height: auto;
+        color: #fff;
+        line-height: 1;
+        &:hover{
+            color: #fff;
+        }
+    }
+}

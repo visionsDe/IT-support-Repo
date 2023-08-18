@@ -11,6 +11,7 @@ import { setEngagementCategoryList } from "../../engagement/reducer/engagementPi
 import { setTeamsAuthStatus } from '../../engagement/reducer/teamsAuthStatusList';
 import { TeamsFxContext } from '../../Context';
 import { TeamsUserContext } from '../../index';
+import { utilGetEmployeeProfile } from '../utils';
 
 import { useSnackbar } from 'notistack';
 export default function TopBar({ id, menuList = null }) {
@@ -41,25 +42,7 @@ export default function TopBar({ id, menuList = null }) {
             // console.warn('Authentication Error : '+error.message)
         }        
     }
-    const getEmployeeProfileDispatch = async () => {
-        let value = await getEmployeeProfileAction('emp/profile');
-        if (value) {
-            dispatch(setEmployeeProfileData(value))
-            cookies.set('profile', JSON.stringify(value), { secure: true, sameSite: 'none' });
-            let profile = await graphClient.api("/me").get();
-            if(profile){
-                cookies.set('graphClientProfile', JSON.stringify(profile), { secure: true, sameSite: 'none' });
-                if ( profile?.userPrincipalName != value?.ms_username) {
-                    setOpenLogoutFailed(true);
-                }
-            }
-            else{
-                let variant = 'error';
-                enqueueSnackbar('Error: Session Expired', {variant});
-                navigate("/login");
-            }
-        }
-    }
+    
     const performReAuthentication = async () => {
         if(getTeamsAuth ==  true){
             await reAuthentication();
@@ -88,14 +71,33 @@ export default function TopBar({ id, menuList = null }) {
             }
         }
     }
+    const getEmployeeProfileDispatch = async () => {
+        let value = await utilGetEmployeeProfile();
+        if(value != null){
+            dispatch(setEmployeeProfileData(value));
+            let profile = await graphClient.api("/me").get();
+            if(profile){
+                cookies.set('graphClientProfile', JSON.stringify(profile), { secure: true, sameSite: 'none' });
+                if ( profile?.userPrincipalName != value?.ms_username) {
+                    setOpenLogoutFailed(true);
+                }
+            }
+            else{
+                let variant = 'error';
+                enqueueSnackbar('Error: Subscription removed', {variant});
+                navigate("/login");
+            }
+        }
+    }
     const updateEngagementCategoryList = async () => {
         let list = await engagementCategoryListAction("category/list");
         dispatch(setEngagementCategoryList(list))
       }
     React.useEffect(() => {
         updateEngagementCategoryList()
-        if (location.pathname.match("/employee-dashboard") || location.pathname.match("/recognition/employee-dashboard")) {
-            getEmployeeProfileDispatch()
+        if (location.pathname.match("/employee-dashboard") || location.pathname.match("/recognition/employee-dashboard") || location.pathname.match("/recognition/manager-dashboard")) {
+            getEmployeeProfileDispatch();
+            
         }
             checkAuthentication();
     }, [])

@@ -104,7 +104,7 @@ const Notifications = ({loading, hasNextPage, error, loadMore, loadingBarStatus}
     if(!!name && name != undefined){
     return {children : name.split(",").reverse().map(item=>item.trim().slice(0,1)).join("")}
   }else{
-    return "N/A"
+    return {children : "N/A"}
   }
   }
   const renderProfileImg = (data = null) => {

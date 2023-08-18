@@ -33,7 +33,7 @@ const Employee = ({ data ,graphClient ,getDiscussionList ,profileImageLoading })
     if(!!name && name != undefined){
       return {children : name.split(",").reverse().map(item=>item.trim().slice(0,1)).join("")}
   }else{
-    return "N/A"
+    return {children : "N/A"}
   }
   }
   const handleOpenMeeting =() => {
@@ -93,13 +93,25 @@ const Employee = ({ data ,graphClient ,getDiscussionList ,profileImageLoading })
   }
   const renderProfileImage = (data = null) => {
     if(data != undefined){
-        let getImage = getGraphProfileURLS?.find(item=>item.employee_id == data?.employeeId);
-        return (Object.keys(getImage || {})?.length > 0 && getImage?.src != null) ? 
-        <Avatar className={`customAvatar ${getImage?.colorPalette}`} alt={getImage?.name} src={getImage?.src} /> 
-        : 
-        <Avatar className={`customAvatar ${getImage?.colorPalette}`} {...stringAvatar(getImage?.name != undefined ? getImage?.name : data?.name)} />
+      let getImage = getGraphProfileURLS?.find(item=>item.employee_id == data?.employeeId);
+      return (Object.keys(getImage || {})?.length > 0 && getImage?.src != null) ? 
+      <Avatar className={`customAvatar ${getImage?.colorPalette}`} alt={getImage?.name} src={getImage?.src} /> 
+      : 
+      <Avatar className={`customAvatar ${getImage?.colorPalette}`} {...stringAvatar(getImage?.name != undefined ? getImage?.name : data?.name)} />
     }
     return <Avatar className={`customAvatar`} {...stringAvatar("Not Available")} />
+  }
+  const renderProfileImageSecond = (data = null) => {
+    if(data != null){
+      if(data.src == null || data.src == ''){
+        let graphPalette = getGraphProfileURLS?.find(item=>item.employee_id == data?.employeeId)?.colorPalette;
+        let getColorPalette =  graphPalette != undefined ? graphPalette : data.colorPalette;
+        return <Avatar className={`customAvatar ${getColorPalette != undefined ? getColorPalette:'paletteColor1'}`} {...stringAvatar(data?.name)} />
+      }else{
+        return <Avatar className={`customAvatar ${location.pathname === '/manager-dashboard' ? data.colorPalette : getGraphProfileURLS?.find(item=>item.employee_id == data?.employeeId)?.colorPalette}`} {...stringAvatar(data?.name)} />
+      }
+    }
+    return <Avatar className={`customAvatar paletteColor1`} {...stringAvatar("Not Available")} />
   }
 return (
     <>
@@ -110,7 +122,8 @@ return (
               <Avatar className={`customAvatar ${location.pathname === '/manager-dashboard' ? data.colorPalette : getGraphProfileURLS?.find(item=>item.employee_id == data?.employeeId)?.colorPalette}`} alt={data?.name} src={data?.src} />
             ) : (
               (!!data?.name && !profileImageLoading && !data?.src )?
-              <Avatar className={`customAvatar ${location.pathname === '/manager-dashboard' ? data.colorPalette : getGraphProfileURLS?.find(item=>item.employee_id == data?.employeeId)?.colorPalette}`} {...stringAvatar(data?.name)} />
+              // <Avatar className={`customAvatar ${location.pathname === '/manager-dashboard' ? data.colorPalette : getGraphProfileURLS?.find(item=>item.employee_id == data?.employeeId)?.colorPalette}`} {...stringAvatar(data?.name)} />
+              renderProfileImageSecond(data)
               :
               <Skeleton className="MuiAvatar-root" variant="circular"  />
             ) : 
@@ -195,9 +208,10 @@ return (
         </div>
         <div className="profileButtonsWrap">
 
-            {/***************** View Conversation Button Start *****************/}
-          {(location.pathname != '/employee-dashboard') && 
-            <Button 
+
+         {/***************** View Conversation Button Start *****************/}
+          {(location.pathname != '/employee-dashboard' && location.pathname != '/recognition/manager-dashboard' && location.pathname != '/recognition/employee-dashboard') && 
+            <Button
               variant="outlined"
               className="btn-primary btn-border"
               disabled={data.ms_identifier? false : true} 
@@ -240,9 +254,9 @@ return (
           {(location.pathname == '/manager-dashboard' || location.pathname == '/admin-dashboard') &&
             <Button  variant="contained" className="btn-primary" onClick={()=> navigate(location.pathname.match('/admin-dashboard') ? `/admin/profile/${data.employeeId}` : `/profile/${data.employeeId}`)}>Profile</Button>
           }
-
-          {(location.pathname != '/manager-dashboard' && location.pathname != '/admin-dashboard' && location.pathname != '/employee-dashboard') &&
-            <Button 
+          
+          {(location.pathname != '/manager-dashboard' && location.pathname != '/admin-dashboard' && location.pathname != '/employee-dashboard' && location.pathname != '/recognition/manager-dashboard' && location.pathname != '/recognition/employee-dashboard') &&
+            <Button
               variant="contained"
               className="btn-primary"
               endIcon={<VideocamIcon />}

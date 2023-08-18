@@ -597,6 +597,8 @@ span.customLabel {
     padding: 12.5px 15px;
     width: 100%;
     font-size: 16px;
+    max-width: 100%;
+    min-width: 100%;
 
     &::Placeholder {
       letter-spacing: 0;
@@ -657,6 +659,7 @@ span.customLabel {
 
     &__indicator {
       color: #222;
+      cursor: pointer;
 
       svg {
         width: 25px;
@@ -691,6 +694,7 @@ span.customLabel {
       }
       font-size: 14px;
       
+      
     }
   }
 
@@ -710,6 +714,7 @@ span.customLabel {
     }
 
     .MuiInputBase-root {
+      margin: 0;
       border: 1px solid #707070;
       border-radius: 10px;
       background-image: url("commonAssets/images/calendar-icon.svg");
@@ -717,11 +722,15 @@ span.customLabel {
       background-size: 17px;
       background-position-y: center;
       background-position-x: calc(100% - 15px);
-      opacity: .7;
+      // opacity: .7;
 
+      input{
+        cursor: pointer;
+      }
       &.Mui-focused {
+        box-shadow: 0 0 0 1px #225FA0;
         border: 1px solid #225FA0;
-        outline: 1px solid #225FA0;
+
 
       }
 
@@ -732,7 +741,7 @@ span.customLabel {
 
     .MuiIconButton {
       &-root {
-
+        cursor: pointer;
         opacity: 0;
 
         svg {
@@ -900,7 +909,9 @@ p.error-message {
   &>div{
     text-align:left !important;
     font-size:15px;
-    padding-top:0px !important;
+    // padding-top:0px !important;
+    height: auto !important;
+    min-height: 39px;
     &::-webkit-scrollbar {
       width: 8px;
     }
@@ -938,4 +949,14 @@ p.error-message {
 .paletteColor4{
   background-color: #CFE9FC !important;
   color:#707070 !important;
+}
+
+.searchNoResults{
+  text-align: center;
+  margin: 25px 0px;
+  font-size: 16px;
+  svg{
+    width: 25px;
+    height: auto;
+  }
 }

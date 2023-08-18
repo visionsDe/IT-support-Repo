@@ -1,0 +1,74 @@
+.yourBadgeWrap {
+    border: 1px solid #22A6DE;
+    border-radius: 10px;
+    padding: 15px 15px 0px;
+    margin-top: 21px;
+    @media(max-width: 1200px) {
+        margin-top: 0px;
+    }
+    .badgeList{
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: 20px 10px; */
+        justify-content: center;
+        // grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+        &Item{
+            width: calc(100%/3);
+            padding: 0 2.5px;
+            flex-direction: column;
+            padding-bottom: 21px;
+            cursor: pointer;
+            &.wider{
+                width: calc(40%); 
+            }
+        }
+
+        &.scrollable {
+            max-height: 355px;
+            margin-right: -10px;
+            width: calc(100% + 10px);
+            padding-right: 10px;
+            @media(max-width: 1200px) {
+                max-height: 325px;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background-color: #fff;
+                border: 0.5px solid #707070;
+                margin-left: 5px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 5px;
+                border-radius: 10px;
+                background-color: #fff;
+
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: #707070;
+            }
+        }
+        .badgeImage{
+            min-width: auto;
+            img{
+                width: 50px;
+            }
+        }
+        .badgeTitle{
+            width: 100%;
+            margin-top: 8px;
+            margin-bottom: 0;
+            max-width: 90%;
+            .MuiListItemText-primary{
+                font-size: 9px;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,606 @@
+.addTeamPopup {
+    display: inline;
+    width: 100%;
+}
+
+.recognitionPopup {
+    // z-index: 2000 !important;
+
+    .MuiBackdrop-root {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .MuiBox-root {
+        max-height: calc(100vh - 80px);
+        overflow: auto;
+        margin-bottom: 0;
+
+        @media screen and (max-width: 1200px) {
+            max-height: calc(100vh - 60px);
+        }
+
+        // @media screen and (max-width: 576px) {
+        //     max-height: calc(100vh - 40px);
+        // }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar {
+            width: 3px;
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #1c5492;
+            border-radius: 10px;
+        }
+
+        .commentBoxWrap {
+            margin-top: 20px;
+
+            &:first-child {
+                margin-top: 0px;
+            }
+
+            .commentTopInfo {
+                margin-top: 20px;
+                margin-bottom: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+
+                @media screen and (max-width: 576px) {
+                    flex-direction: column;
+                    align-items: baseline;
+                }
+            }
+        }
+    }
+
+    .popupHeader {
+        &.headerBlue {
+            padding: 28px 40px 25px;
+            background-color: #225FA0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            @media(max-width: 1200px) {
+                padding: 25px 30px 20px;
+            }
+
+            @media(max-width: 768px) {
+                padding: 25px 20px 20px;
+            }
+
+            button.whiteClose {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                width: 40px;
+                transform: translateY(-50%);
+                transition: all ease-in-out 0.3s;
+                color: #fff;
+
+                @media(max-width: 768px) {
+                    right: 0px;
+                }
+
+                &:hover {
+                    // transform: rotate(90deg);
+                    color: #fff;
+                }
+            }
+        }
+
+        .headerTitle {
+            color: #fff;
+        }
+
+
+
+
+    }
+
+    .headerTitle {
+        font-size: 34px;
+        margin: 0;
+        font-weight: 600;
+        line-height: 1.2;
+
+        @media screen and (max-width: 1400px) {
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 991px) {
+            font-size: 25px;
+        }
+    }
+
+    .headerTitleInfo {
+        font-size: 26px;
+        margin: 12px 0px 0px;
+
+        @media screen and (max-width: 1400px) {
+            font-size: 22px;
+        }
+
+        @media screen and (max-width: 991px) {
+            font-size: 18px;
+        }
+    }
+
+    .popupMainIcon {
+        margin: 15px 0px 25px;
+        font-size: 75px;
+    }
+
+    .popupDescriptionLarge {
+        font-size: 24px;
+        color: #212121;
+        line-height: 1.5;
+
+        @media screen and (max-width: 1400px) {
+            font-size: 22px;
+        }
+
+        @media screen and (max-width: 991px) {
+            font-size: 18px;
+        }
+    }
+
+    button.grayClose {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 40px;
+        transition: all ease-in-out 0.3s;
+        color: #707070;
+
+        @media(max-width: 768px) {
+            right: 0px;
+        }
+
+        &:hover {
+            // transform: rotate(90deg);
+            color: #000;
+        }
+    }
+
+    .popupBody {
+        position: relative;
+
+        &.small {
+            padding: 25px 40px 30px;
+
+            @media(max-width: 1200px) {
+                padding: 20px 30px;
+            }
+
+            @media(max-width: 768px) {
+                padding: 20px 20px;
+            }
+        }
+
+        &.large {
+            padding: 40px 40px 40px;
+
+            @media(max-width: 1200px) {
+                padding: 30px 30px;
+            }
+
+            @media(max-width: 768px) {
+                padding: 25px 20px;
+            }
+        }
+
+    }
+
+    .customSearch {
+        margin-bottom: 25px;
+
+        .MuiPaper {
+            &-root {
+                border: 1px solid #707070;
+                border-radius: 10px;
+                box-shadow: none;
+                height: 50px;
+
+                &:focus {
+                    outline: 1px solid #225FA0;
+                    border-color: #225FA0;
+                }
+            }
+        }
+    }
+
+    .cInputWrap {
+        margin-bottom: 30px;
+        width: 100%;
+        &.inputWrap-50{
+            width: calc(50% - 15px);
+            @media(max-width: 768px) {
+                width: calc(100%);
+            }
+        }
+        label {
+            font-size: 18px;
+            line-height: 1.2;
+
+            @media(max-width: 1400px) {
+                font-size: 16px;
+            }
+        }
+
+        .radioBoxWrap {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: -5px;
+
+            .MuiFormControlLabel-root {
+                background: #fff;
+                border: 1px solid #707070;
+                border-radius: 5px;
+                margin: 0 18px 5px 0px;
+                min-width: 160px;
+                height: 50px;
+                padding: 0 15px;
+
+                @media(max-width: 576px) {
+                    min-width: 120px;
+                    margin: 0 10px 5px 0px;
+                }
+
+                .MuiRadio-root {
+                    padding: 0;
+                    margin-right: 12px;
+                }
+
+                &.active {
+                    border: 2px solid #225fa0;
+                }
+            }
+        }
+
+        &.uploadWrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .uploadImage {
+                margin-right: 32px;
+
+                @media(max-width: 991px) {
+                    margin-right: 22px;
+                }
+
+                @media(max-width:576px) {
+                    margin-right: 15px;
+                }
+
+                .MuiAvatar {
+
+                    &-root {
+                        border: 1px solid #707070;
+                        width: 106px;
+                        height: 106px;
+                        background: #fff;
+                        color: #000;
+                        font-size: 35px;
+
+                        @media(max-width: 991px) {
+                            width: 85px;
+                            height: 85px;
+                            font-size: 28px;
+                        }
+
+                    }
+                }
+            }
+
+            .uploadBtn {
+                flex: 1;
+                color: #000;
+
+                @media(max-width: 576px) {
+                    width: 100%;
+                    flex: auto;
+                    margin-top: 10px;
+                }
+
+                .ant-upload-wrapper {
+                    font-size: 18px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    margin-bottom: 5px;
+                    display: inline-block;
+                    color: #000;
+
+                    &:hover {
+                        color: #225fa0;
+                    }
+
+                    // @media(max-width: 991px) {
+                    //     font-size: 16px;
+                    // }
+                }
+            }
+        }
+    }
+
+    .popupBtnWrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        margin-top: 15px;
+
+        .MuiButtonBase-root {
+            margin-top: 5px;
+
+            &.btn-primary {
+                @media(max-width: 991px) {
+                    min-width: 150px;
+                }
+            }
+        }
+    }
+
+    .empSelectWrap {
+        overflow-y: auto;
+        margin-top: 10px;
+
+        &.scrollable {
+            max-height: 400px;
+            margin-right: -10px;
+            width: calc(100% + 20px);
+            padding-right: 10px;
+
+            @media(max-width: 1400px) {
+                max-height: 400px;
+            }
+
+            @media(max-width: 1200px) {
+                margin-right: -5px;
+                width: calc(100% + 15px);
+                padding-right: 5px;
+                max-height: 350px;
+            }
+
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background-color: #fff;
+                border: 0.5px solid #707070;
+                margin-left: 5px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 10px;
+                border-radius: 10px;
+                background-color: #fff;
+
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: #707070;
+            }
+        }
+
+        .empSelectList {
+            border: 1px solid #707070;
+            // border-bottom: 1px solid #707070;
+            padding: 0;
+            // margin-right: 5px;
+
+            .MuiListItem {
+                &-root {
+                    border: 1px solid #707070;
+                    border-bottom: 1px solid transparent;
+                    border-left: 1px solid transparent;
+                    border-right: 1px solid transparent;
+                    padding: 8px 15px;
+                    cursor: pointer;
+
+                    // &:nth-last-child(1){
+                    //     border-bottom: none;
+                    // }
+                    &:first-child {
+                        border-top: 1px solid transparent;
+                    }
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                        // border: 1px solid #225FA0;
+                        // outline: 1px solid #225FA0;
+                    }
+
+                    &.active {
+                        border: 1px solid #225FA0;
+                        box-shadow: 0px 0px 0px 1px #225fa0;
+                    }
+
+                }
+
+                &Text {
+                    &-primary {
+                        font-size: 16px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .historyTable {
+        margin-top: 40px;
+        border: 1px solid #707070;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 30px;
+
+        // padding: 0 40px;
+        table {
+            font-size: 18px;
+            border-collapse: collapse;
+            width: 100%;
+            @media(max-width: 1600px) {
+                font-size: 16px;
+            }
+
+            thead {
+                background-color: #707070;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 600;
+                @media(max-width: 991px) {
+                    display: none;
+                }
+                th {
+                    padding: 25px 15px;
+                    text-align: left;
+
+                    &:first-child {
+                        padding-left: 30px;
+                    }
+
+                    &:last-child {
+                        padding-right: 30px;
+                    }
+                }
+            }
+
+            tbody {
+                color: #707070;
+                line-height: 1.4;
+
+                tr {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        height: 2px;
+                        width: 100%;
+                        top: 100%;
+                        background: linear-gradient(90deg, #B2B2B2 50%, hsla(0, 0%, 100%, 0) 0);
+                        background-position: 0;
+                        background-size: 8px 8px;
+                        background-repeat: repeat-x;
+                        z-index: 1;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    &:nth-child(even){
+                        @media(max-width: 991px) {
+                            background-color: #f5f5f5;
+                        }
+
+                    }
+
+                    td {
+                        padding: 22px 15px;
+                        @media(max-width: 991px) {
+                            display: block;
+                            text-align: right;
+                            font-size: 14px;
+                            padding: 11px 15px;
+                            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+                            min-height: 50px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            &:before{
+                                content: attr(data-label);
+                                float: left;
+                                font-size: 14px;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                width: 40%;
+                                text-align: left;
+                            
+                            }
+                            &:last-child{
+                                box-shadow: none;
+                            }
+
+                        }
+                        &:first-child {
+                            padding-left: 30px;
+                            position: relative;
+                            @media(max-width: 991px) {
+                                padding-left:15px;
+                            }
+                            &:after {
+                                content: "";
+                                width: 30px;
+                                height: 100%;
+                                position: absolute;
+                                background: #fff;
+                                top: 0;
+                                left: 0;
+                                z-index: 1;
+                                @media(max-width: 991px) {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        &:last-child {
+                            padding-right: 30px;
+                            @media(max-width: 991px) {
+                                padding-right:15px;
+                            }
+                            &::after {
+                                content: "";
+                                width: 30px;
+                                height: 100%;
+                                position: absolute;
+                                background: #fff;
+                                top: 0;
+                                right: 0;
+                                z-index: 1;
+                                @media(max-width: 991px) {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .tableActionBtn{
+                            .MuiButtonBase-root{
+                                padding: 4px;
+                                svg{
+                                    color: #000;
+                                    height: 20px;
+                                }
+                            }
+
+                        }
+                        .descriptionField{
+                            .MuiInputBase-root{
+                                &::before{
+                                    display: none;
+                                }
+                                &::after{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.inputWrapRow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

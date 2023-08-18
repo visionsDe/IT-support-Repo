@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./modals.scss";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
+// import Backdrop from "@mui/material/Backdrop";
+// import Box from "@mui/material/Box";
+// import Modal from "@mui/material/Modal";
+// import Fade from "@mui/material/Fade";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
+// import IconButton from "@mui/material/IconButton";
+// import Chip from "@mui/material/Chip";
+// import Stack from "@mui/material/Stack";
+// import TextField from "@mui/material/TextField";
+// import Card from "@mui/material/Card";
+// import CardActions from "@mui/material/CardActions";
+
+import {CardContent,CardHeader, Card, CardActions, TextField, Stack, Chip, IconButton, Typography, Button, Fade, Modal, Box, Backdrop} from "@mui/material";
+
+
 import "../../main.scss";
 // Fontawesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,6 +26,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import moment from 'moment'
 import * as _ from "lodash";
 import { useNavigate } from "react-router-dom";
+import engagementImage from "../../commonAssets/images/engagement.jpg";
 
 const style = {
   position: "absolute",
@@ -258,7 +262,6 @@ export const EmployeeComment = ({ data ,pulse_comment,triggerClickEvent}) => {
                     </Stack>
                     <Stack className={pulse_comment?.category != 'Weekly Pulse' && 'employee_comment-contentHead'}>
                       <Typography>
-                        {/* {JSON.stringify(pulse_comment)} */}
                         <span>{pulse_comment?.category != 'Weekly Pulse' && 'Current - '} {moment(pulse_comment.comment_time).format("MM/DD/YYYY")}: </span>{pulse_comment.comment != null ? <span style={{fontWeight:'normal'}} dangerouslySetInnerHTML={{ __html: pulse_comment.comment.split("\n").join("<br/>") }} /> : "N/A"}
                       </Typography>
                     </Stack>
@@ -598,5 +601,50 @@ export const LogoutPopup = ({openLogoutFailed , setOpenLogoutFailed ,navigate ,c
           </Box>
         </Fade>
       </Modal>
+  );
+};
+
+export const WhereToGo = ({setWhereToGo , whereToGo}) => {
+  const handleClose = () => {setWhereToGo(false)}
+  const handleOpen = () => {setWhereToGo(true)}
+  return (
+    <>
+      <Button sx={{ boxShadow: "none" }} variant="contained"  className="login-btn" onClick={handleOpen} >Login</Button>
+      <Modal
+        open={whereToGo}
+        onClose={() => handleClose()}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 300,
+          },
+        }}
+        className="wtg-wrapper"
+      >
+        <Fade in={setWhereToGo}>
+          <Box sx={style} >
+            <Card sx={{boxShadow: "0px 2px 12px #00000065;",borderRadius: "10px"}} >
+              <div className="wtg-wrapper-inner" >
+                <CardHeader title="Where Do You Want to Go?" />
+                <CardContent >
+                    <div className="tabCardList">
+                        <div className="tabCard tabRecognition">
+                            <h4 >Recognition</h4>
+                            <img src={engagementImage}></img>
+                        </div>
+                        <div className="tabCard tabEngagement">
+                            <h4>Engagement</h4>
+                            <img src={engagementImage}></img>
+                        </div>
+                    </div>
+                </CardContent>
+              </div>
+            </Card>
+          </Box>
+        </Fade>
+      </Modal>
+    </>
+
   );
 };

@@ -3,7 +3,7 @@ import Cookie from "js-cookie";
 const request = axios.create({
     baseURL: `${process.env.REACT_APP_API_BASE_URL}`,
     headers:{
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain',                                                       
     },
 });
 

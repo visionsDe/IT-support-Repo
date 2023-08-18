@@ -16,6 +16,7 @@ import { LoginFailedPopup, InfoPopup } from "../../commonComponents/modals/modal
 import { useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { TeamsUserContext } from "../../index";
+import { utilGetEmployeeProfile } from "../../commonComponents/utils";
 
 
 const Login = () => {
@@ -44,7 +45,8 @@ const Login = () => {
 
   const {pathname} = useLocation();
   const cookies = new Cookies();
-  const executeLoginCheck = () => {
+  const executeLoginCheck = async () => {
+    await utilGetEmployeeProfile();
     const user = Cookie.get('role', { secure: true, sameSite:'none' }) != undefined && Cookie.get('role', { secure: true, sameSite:'none' }) != '' ? (Cookie.get('role', { secure: true, sameSite:'none' }) ==  true ? 'manager' : 'employee') : false;
     const admin = Cookie.get('admin', { secure: true, sameSite:'none' });
     const authToken = Cookie.get('token', { secure: true, sameSite:'none' });
@@ -53,20 +55,20 @@ const Login = () => {
       if(admin == false){
         
         if(user === 'manager'){
-          redirectPath = appInfo == 'recognition' ? "/recognition/manager-dashboard": "/manager-dashboard";
+          redirectPath = appInfo?.page?.id == 'recognition' ? "/recognition/manager-dashboard": "/manager-dashboard";
         }
         else if(user === 'employee'){
-            redirectPath = appInfo == 'recognition' ? "/recognition/employee-dashboard": "/employee-dashboard";
+            redirectPath = appInfo?.page?.id == 'recognition' ? "/recognition/employee-dashboard": "/employee-dashboard";
         }
         else{
             redirectPath = '/login';
         }
       }else{
         if(user === 'manager'){
-          redirectPath = appInfo == 'recognition' ? "/recognition/manager-dashboard": "/admin-dashboard";
+          redirectPath = appInfo?.page?.id == 'recognition' ? "/recognition/manager-dashboard": "/admin-dashboard";
         }
         else if(user === 'employee'){
-            redirectPath = appInfo == 'recognition' ? "/recognition/employee-dashboard": "/admin-dashboard";
+            redirectPath = appInfo?.page?.id == 'recognition' ? "/recognition/employee-dashboard": "/admin-dashboard";
         }
         else{
             redirectPath = '/login';
@@ -95,7 +97,7 @@ const Login = () => {
       password: Yup.string().required("Please enter a valid password"),
     }),
     
-    // == =========== form submit == =======
+    // ============= Form submit =========
     onSubmit: async (data) => {
        let response;
        setLoading(true);

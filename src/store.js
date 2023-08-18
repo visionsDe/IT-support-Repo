@@ -8,6 +8,9 @@ import { teamsAuthStatusSlice } from "./engagement/reducer/teamsAuthStatusList";
 import { teamsLoginStatusSlice } from "./engagement/reducer/teamsLoginStatusList";
 import { graphProfileUrlSlice } from "./engagement/reducer/graphProfileUrl";
 import { adminEmployeesCardListSlice } from "./engagement/reducer/adminEmployeesList";
+import { recognitionDashboardSlice } from './recognition/reducer/recognitionDashboardReducer';
+import { ShowTargetSlice } from "./recognition/showTargets/reducer/showTargetReducer";
+
 export const store = configureStore({
     reducer: {
         engagementCategory : engagementCategorySlice.reducer,
@@ -18,6 +21,9 @@ export const store = configureStore({
         teamsAuthStatus : teamsAuthStatusSlice.reducer,
         teamsAuthClient : teamsAuthStatusSlice.reducer,
         teamsLoginStatus : teamsLoginStatusSlice.reducer,
+        recognitionDashboard : recognitionDashboardSlice.reducer,
+        targetCardList: ShowTargetSlice.reducer,
+        
         engagementCategoryScore : engagementCategorySlice.reducer,
         graphProfileUrl : graphProfileUrlSlice.reducer,
         adminEmployeesCardList : adminEmployeesCardListSlice.reducer

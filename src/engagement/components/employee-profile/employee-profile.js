@@ -37,7 +37,7 @@ useEffect(()=>{
 
   return (
     <Box 
-    className={`employee_card-wrapper ${(!employeeProfileData.pulse && employeeProfileData.pulse == undefined || employeeProfileData.pulse == null ) ? ' value_none ' : (employeeProfileData.pulse <= 5 ? "error-card" : "")} `}
+    className={`employee_card-wrapper ${(!employeeProfileData?.pulse && employeeProfileData?.pulse == undefined || employeeProfileData?.pulse == null ) ? ' value_none ' : (employeeProfileData?.pulse <= 5 ? "error-card" : "")} `}
     >
       <Employee data={{
         name: !!employeeProfileData ? (employeeProfileData?.name != undefined ? employeeProfileData?.name : ''):"",

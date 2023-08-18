@@ -1,0 +1,303 @@
+.targetCardList{
+    display: grid !important;
+    grid-gap: 31px 38px ;
+    grid-template-columns: repeat(3, 1fr);
+    @media(max-width: 1600px) {
+        grid-gap: 25px 30px;
+    }
+    @media(max-width: 1400px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media(max-width: 1200px) {
+        grid-gap: 22px 25px;
+    }
+    @media(max-width: 991px) {
+        grid-gap: 20px;
+    }
+    @media(max-width: 576px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    &.scrollable{
+        max-height: 760px;
+        overflow-y: auto;
+        // margin-right: -10px;
+        // width: calc(100% + 20px);
+        padding-right: 10px;
+        @media(max-width: 1200px) {
+            // margin-right: -5px;
+            // width: calc(100% + 15px);
+            padding-right: 5px;
+            max-height: 500px;
+        }
+        &::-webkit-scrollbar-track
+        {
+            border-radius: 10px;
+            background-color: #fff;
+            border: 0.5px solid #707070;
+            margin-left: 5px;
+        }
+        
+        &::-webkit-scrollbar
+        {
+            width: 10px;
+            border-radius: 10px;
+            background-color: #fff;
+
+        }
+        
+        &::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            background-color: #707070;
+        }
+    }
+    .targetCard{
+        box-shadow: 4px 4px 10px #00000029;
+        border: 1px solid #225FA0;
+        border-radius: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        &.statusDue{
+            border: 1px solid #FF0000; 
+            .viewDetails{
+                background-color: #FF0000;
+                box-shadow: 0px 0px 0px 1px #FF0000;
+                &:hover{
+                    background-color: #ca0000;
+                    box-shadow: 0px 0px 0px 1px #ca0000;
+                }
+            }
+        }
+        .dateRewardWrap{
+            p{
+                color: #707070;
+                font-size: 15px;
+                padding: 0 12px;
+                @media(max-width: 991px) {
+                    padding: 0 10px;
+                }
+                span{
+                    color: #000;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                &.due{
+                    span{
+                        color: #FF0000;
+                    }
+                }
+            }
+        }
+        .viewDetails{
+            height: 52px;
+            font-size: 15px;
+            border-radius: 0px 0px 20px 20px;
+            box-shadow: 0px 0px 0px 1px #225fa0;
+            svg{
+                margin-right: 7px;
+                height: 20px;
+                margin-top: -3px;
+            }
+        }
+        .cardDescription{
+            // padding: 15px 20px;
+            max-width: 230px;
+            min-height: 72px;
+            margin: 20px auto 15px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            &.FieldBig{
+                text-align: center;
+                min-height: 72px;
+                max-width: 100%;
+                margin: 20px 15px 15px;
+                .MuiInputBase{
+                    
+                    &-root{
+                        height: 72px;
+                        border: 0.5px solid #707070;
+                        border-radius: 0px;
+                        width: 100%;
+                        fieldset{
+                            display: none;
+                        }
+                    }
+                    &-input{
+                        text-align: center;
+                        font-weight: 600;
+                    }
+
+                }
+
+            }
+        }
+        .cardFieldSmall{
+            .MuiInputBase{
+
+                &-root{
+                    height: 30px;
+                    border: 0.5px solid #707070;
+                    border-radius: 0px;
+                    font-size: 18px;
+                    margin-top: -2px;
+                    fieldset{
+                        display: none;
+                    }
+                }
+                &-input{
+                    text-align: center;
+                    font-weight: 600;
+                    padding: 4px 0px 0px;
+                }
+
+            }
+        }
+        .MuiDivider-root{
+            border-color: #707070;
+            width: 195px;
+            margin: 0 auto;
+        }
+        .toggleBtn{
+            border: none;
+            background: transparent;
+            padding: 3px 5px;
+            height: 25px;
+            position: absolute;
+            right: 10px;
+            font-size: 22px;
+            color: #707070;
+            top: 0px;
+            cursor: pointer;
+        }
+
+    }
+}
+.empSliderWrap{
+    margin: 20px 0px;
+    .empSlider{
+        max-width: 270px;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 15px;
+        overflow: hidden;
+        @media(max-width: 768px) {
+            max-width: 250px;
+        }
+        @media(max-width: 576px) {
+            max-width: 270px;
+        }
+        .customAvatar{
+            .MuiAvatar-root{
+                // background: #d1ebde;
+                border: 3px solid #ededed;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 50%;
+                color: #bdbdbd;
+            }
+        }
+        .empAvatar{
+            position: relative;
+            .MuiAvatar-root{
+                border: 1px solid #225FA0;
+            }
+        }
+        .MuiButtonBase-root {
+            position: absolute;
+            padding: 0;
+            top: -4px;
+            right: 0px;
+            font-size: 13px;
+            color: #000;
+        }
+        
+    }
+    .react-multi-carousel-list {
+        justify-content: center;
+    }
+    .react-multi-carousel-list{
+        width: 100%;
+        overflow: visible;
+        margin-bottom: 10px;
+        padding-top: 5px;
+        // display: inline-block;
+
+        // justify-content: center;
+        .react-multiple-carousel__arrow{
+            background: white;
+            border-radius: 0;
+            min-width: 15px;
+            min-height: 55px;
+            top: -2px;
+            z-index: 0;
+            width: 18px;
+            padding: 0;
+            &:hover{
+                &:before{
+                    color: #000;
+                }
+            }
+            &:before{
+                color: #707070;
+                font-weight: 600;
+                font-size: 15px;
+
+            }
+            &--left{
+                left: -18px;
+
+            }
+            &--right{
+                right: -18px;
+
+            }
+        }
+    }
+}
+.toggleButtonPopup{
+    box-shadow: 3px 3px 10px #00000029;
+    border: 1px solid #707070;
+    border-radius: 8px;
+    min-width: 150px;
+    margin-top:15px;
+    background-color: #fff;
+    font-size: 14px;
+    .MuiList{
+        &Item-root{
+            border-bottom: 1px solid #707070;
+            font-size: 14px;
+            padding: 0;
+            cursor: pointer;
+            &:last-child{
+                border-bottom: none;
+            }
+            .font14{
+                padding: 9px 15px;
+                width: 100%;
+            
+                &:hover{
+                    color: #225FA0;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+span.customOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+}
+
+.targetCardList{
+    position: relative;
+}

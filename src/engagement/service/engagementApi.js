@@ -127,7 +127,8 @@ export const setPulseValueApi = async (url) => {
 
 export const getEmployeeProfileApi = async (url) => {
   try{
-    const { data } = await request.get(clientId+url);
+    let clientID = clientId != '' ? clientId : "/"+Cookie.get('Client_Id')+"/";
+    const { data } = await request.get(clientID+url);
     return data;
   }
   catch(er){
